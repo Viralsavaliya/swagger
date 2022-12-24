@@ -1,0 +1,313 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0",
+      "title": "swagger",
+      "contact": {}
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "securityDefinitions": {},
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/": {
+        "get": {
+          "summary": "Get All user",
+          "tags": [
+            "user"
+          ],
+          "operationId": "GetAlluser",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/user": {
+        "post": {
+          "summary": "Create user",
+          "tags": [
+            "user"
+          ],
+          "operationId": "Createuser",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/CreateuserRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "delete": {
+          "summary": "delete user",
+          "tags": [
+            "user"
+          ],
+          "operationId": "deleteuser",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/user/{userId}": {
+        "put": {
+          "summary": "update user",
+          "tags": [
+            "user"
+          ],
+          "operationId": "updateuser",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/updateuserrequest"
+              }
+            },
+            {
+              "name": "userId",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/products": {
+        "get": {
+          "summary": "Get one product",
+          "tags": [
+            "products"
+          ],
+          "operationId": "Getoneproduct",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "post": {
+          "summary": "create product",
+          "tags": [
+            "products"
+          ],
+          "operationId": "createproduct",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/createproductrequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "put": {
+          "summary": "update Products",
+          "tags": [
+            "products"
+          ],
+          "operationId": "updateProducts",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "delete": {
+          "summary": "delete Products",
+          "tags": [
+            "products"
+          ],
+          "operationId": "deleteProducts",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "CreateuserRequest": {
+        "title": "CreateuserRequest",
+        "example": {
+          "userName": "Viral savaliya",
+          "email": "viralsavaliya@gmail.com",
+          "password": "viral123",
+          "age": 21,
+          "address": "surat"
+        },
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userName",
+          "email",
+          "password",
+          "age",
+          "address"
+        ]
+      },
+      "updateuserrequest": {
+        "title": "updateuserrequest",
+        "example": {
+          "userName": "shubham savaliya",
+          "email": "shubham@gmail.com",
+          "password": "viral123",
+          "age": 21,
+          "address": "surat"
+        },
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userName",
+          "email",
+          "password",
+          "age",
+          "address"
+        ]
+      },
+      "createproductrequest": {
+        "title": "createproductrequest",
+        "example": {
+          "productName": "t.v",
+          "price": "30,000"
+        },
+        "type": "object",
+        "properties": {
+          "productName": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "productName",
+          "price"
+        ]
+      }
+    },
+    "tags": [
+      {
+        "name": "user"
+      },
+      {
+        "name": "products"
+      }
+    ]
+  }
